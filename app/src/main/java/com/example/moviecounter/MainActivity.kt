@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Card
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -39,6 +40,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
 @Composable
 fun Greeting(
     name: String,
@@ -49,7 +51,6 @@ fun Greeting(
         modifier = modifier
     )
 }
-
 
 @Composable
 fun ComponenteCard() {
@@ -74,6 +75,21 @@ fun ComponenteCheckbox() {
         checked = marcado.value,
         onCheckedChange = {
             marcado.value = it
+        }
+    )
+}
+
+@Composable
+fun ComponenteSwitch() {
+
+    val activado = remember {
+        mutableStateOf(false)
+    }
+
+    Switch(
+        checked = activado.value,
+        onCheckedChange = {
+            activado.value = it
         }
     )
 }
